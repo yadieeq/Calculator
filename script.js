@@ -1,4 +1,7 @@
+// Selectors
 const inpNum = document.querySelector(".num")
+const inputNumBtns = document.querySelectorAll(".but-val")
+const out = document.querySelector(".out")
 
 const btnPlus = document.querySelector(".btn-plus")
 const btnMinus = document.querySelector(".btn-minus")
@@ -6,50 +9,22 @@ const btnMultiply = document.querySelector(".btn-multiply")
 const btnDivide = document.querySelector(".btn-divide")
 const btnEquals = document.querySelector(".btn-equals")
 const btnClear = document.querySelector(".btn-clear")
-const out = document.querySelector(".out")
 
-const inputNumBtns = document.querySelectorAll(".but-val")
-
+// Creating variables
 let num1 = 0
 let num2 = 0
 let operation = ''
 let result = 0
 
-window.onload = function () {
-    inpNum.focus()
-}
+// Main functions
+window.onload = () => {inpNum.focus()}
 
-btnPlus.onclick = function (){
-    num1 = +inpNum.value
-    operation = '+'
-    inpNum.value = ''
-    out.innerHTML += '<br>' + num1 + ' + '
-    inpNum.focus()
-    
-}
-
-btnMinus.onclick = function (){
-    num1 = +inpNum.value
-    operation = '-'
-    inpNum.value = ''
-    out.innerHTML += '<br>' + num1 + ' - ' 
-    inpNum.focus()
-}
-
-btnMultiply.onclick = function (){
-    num1 = +inpNum.value
-    operation = '*'
-    inpNum.value = ''
-    out.innerHTML += '<br>' + num1 + ' x ' 
-    inpNum.focus()
-}
-
-btnDivide.onclick = function (){
-    num1 = +inpNum.value
-    operation = '/'
-    inpNum.value = ''
-    out.innerHTML += '<br>' + num1 + ' ÷ '
-    inpNum.focus()
+const setOperation = (op, symbol) => {
+    num1 = +inpNum.value;       
+    operation = op;              
+    inpNum.value = '';           
+    out.innerHTML += '<br>' + num1 + ' ' + symbol + ' ';
+    inpNum.focus();               
 }
 
 btnClear.onclick = function (){
@@ -66,6 +41,11 @@ inputNumBtns.forEach(btn => {
         inpNum.focus() // оставляем курсор в инпуте
     }
 })
+
+btnPlus.onclick = () => setOperation('+', '+');
+btnMinus.onclick = () => setOperation('-', '-');
+btnMultiply.onclick = () => setOperation('*', 'x');
+btnDivide.onclick = () => setOperation('/', '÷');
 
 btnEquals.onclick = function (){
     num2 = +inpNum.value
