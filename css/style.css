@@ -8,31 +8,41 @@
 main {
     width: 100vw;
     height: 100vh;
-    background-color: #4f85db;
+    background-color: #627480;
 }
 
 .calculator {
     background-color: #454d59;
     padding: 20px;
     gap: 20px;
+    position: relative;
 }
 
 .out {
-    width: 100%;
+    width: 250px;
     background-color: #FFF;
+    border: 20px #2c3440 solid ;
+    position: absolute;
+    left: -350px;
+    top: 0;
+    height: calc(100% - 40px);
+    overflow: auto;
+    padding: 5px;
 }
 
 .inp-nums {
     background-color: #fff;
-    width: 98%;
-    height: 30px;
+    width: 100%;
+    height: 40px;
 }
 
 .inp-nums input {
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
     font-size: 30px;
+    outline: none;
     border: none;
+    padding: 5px;
     justify-self: flex-end;
 }
 

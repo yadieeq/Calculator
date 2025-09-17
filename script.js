@@ -33,6 +33,7 @@ btnClear.onclick = function (){
     result = 0
     out.textContent = ''
     inpNum.value = 0
+    inpNum.focus()
 }
 
 inputNumBtns.forEach(btn => {
@@ -60,13 +61,11 @@ btnEquals.onclick = function (){
                 inpNum.value = 0;
             } else {
                 result = num1 / num2;
-                out.innerHTML += ' ' + num2 + ' = ' + result;
-                inpNum.value = result;
             }
         break;
     }
 
-    out.innerHTML += ' ' + num2 + ' = ' + result; inpNum.value = result
+    out.innerHTML += ' ' + num2 + ' = ' + result + '<br>'; inpNum.value = result
     inpNum.focus()
 }
 
