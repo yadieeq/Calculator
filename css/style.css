@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    background: transparent;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #4f85db;
+}
+
+.calculator {
+    width: 300px;
+    height: 500px;
+    background-color: #454d59;
+    padding: 1%;
+    gap: 20px;
+}
+
+.out {
+    background-color: #fff;
+    width: 100%;
+    height: 25%;
+}
+
+.inp-btns {
+    width: 100%;
+    height: 100%;
+    background-color: #2c3440;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+
+}
+
+.inp-btns button {
+    /* border-radius: 100%; */
+}
