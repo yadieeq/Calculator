@@ -77,3 +77,13 @@ main {
     background-color: #c97b57;
     color: black;
 }
+
+
+
+.btn-operation:disabled {
+    opacity: .7;
+}
+
+.btn-equals:disabled {
+    opacity: .7;
+}
