@@ -143,6 +143,7 @@ inpNum.onkeyup = (e) => {
 
         // console.log("Индекс знака:", index, "num1", num1, operation)
         inpNum.value = ''
+        disableBtn()
 
         
     }
