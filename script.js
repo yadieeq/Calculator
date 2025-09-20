@@ -92,25 +92,26 @@ const equalsFunc = () => {
             visualOperation = 'x';
             break;
         case '/':
-            if (num2 === 0) {
-                out.innerHTML += ' ' + num2 + ' = Impossible';
-                inpNum.value = 0;
-            } else {
-                result = num1 / num2;
-                visualOperation = '÷';
-            }
+            result = num1 / num2;
+            visualOperation = '÷';
+
             break;
     }
 
-    out.innerHTML += num1 + ' ' + ' ' + visualOperation + ' ' + num2 + ' = ' + +result.toFixed(4) + ' <br>';
-    inpNum.value = +result.toFixed(4)
-    inpNum.focus()
+    if (num2 === 0 && operation === '/') out.innerHTML += 'Impossible <br>';
+    else {
 
-    changeActiveBtn(false)
-    disableEquals()
-    operation = ''
+        inpNum.value = 0;
+        out.innerHTML += num1 + ' ' + ' ' + visualOperation + ' ' + num2 + ' = ' + +result.toFixed(4) + ' <br>';
+        inpNum.value = +result.toFixed(4)
+        inpNum.focus()
 
+        changeActiveBtn(false)
+        disableEquals()
+        operation = ''
+    }
 }
+
 
 btnEquals.onclick = equalsFunc
 
@@ -145,10 +146,10 @@ inpNum.onkeyup = (e) => {
         inpNum.value = ''
         disableBtn()
 
-        
+
     }
-    if(e.key === "Enter") {
-        if(operation !== '') equalsFunc()
+    if (e.key === "Enter") {
+        if (operation !== '') equalsFunc()
     }
 }
 
